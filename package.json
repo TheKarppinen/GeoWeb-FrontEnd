@@ -79,7 +79,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KNMI/GeoWeb-FrontEnd.git"
+    "url": "git+https://github.com/TheKarppinen/GeoWeb-FrontEnd.git"
   },
   "author": "KNMI, based on work by David Zukowski <david@zuko.me> (http://zuko.me)",
   "license": "MIT",
