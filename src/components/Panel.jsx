@@ -15,7 +15,7 @@ class Panel extends PureComponent {
 
   render () {
     const { title, style, className, isLoggedIn, mapId, dispatch, type, panelsActions, mapMode, feedback } = this.props;
-    const panelOpts = ['ADAGUC', 'TIMESERIES', 'PROGTEMP'];
+    const panelOpts = ['WMS', 'ADAGUC', 'TIMESERIES', 'PROGTEMP'];
     const isActive = typeof className === 'string' ? className.split(' ').includes('activePanel') : false;
     if (!title) {
       const onClick = type === 'ADAGUC' ? (e) => {
