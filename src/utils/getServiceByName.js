@@ -70,7 +70,7 @@ export const GetServices = (BACKEND_SERVER_URL) => {
         (e) => { return { 'error':e, 'status': 'rejected' }; }
       );
     };
-    axios.all(allURLs.map((req) => axios.get(req, { withCredentials: true }))).then(
+    axios.all(allURLs.map((req) => axios.get(req, { withCredentials: false }))).then(
       axios.spread((services, overlays) => {
         const allSources = [...services.data, ...personalUrls, overlays.data[0]];
         const promises = [];

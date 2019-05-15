@@ -102,7 +102,7 @@ const retrieveParameters = (container) => {
   axios({
     method: 'get',
     url: endpoint,
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then(response => {
     if (response.status === 200 && response.data) {
@@ -141,7 +141,7 @@ const retrievePhenomena = (container) => {
   axios({
     method: 'get',
     url: endpoint,
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then(response => {
     if (response.status === 200 && response.data) {
@@ -173,7 +173,7 @@ const retrieveObscuringPhenomena = (container) => {
   axios({
     method: 'get',
     url: endpoint,
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then(response => {
     if (response.status === 200 && response.data) {
@@ -215,7 +215,7 @@ const retrieveAirmetTac = (container, uuid) => {
     axios({
       method: 'get',
       url: `${urls.BACKEND_SERVER_URL}/airmets/${uuid}`,
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'text',
       headers: {
         'Accept': 'text/plain'
@@ -252,7 +252,7 @@ const retrieveCategorizedAirmets = (container, retrievableCategory) => {
     axios({
       method: 'get',
       url: `${endpoint}${retrievableCategory.urlSuffix}`,
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json'
     }).then(response => {
       if (response.status === 200 && response.data) {
@@ -480,7 +480,7 @@ const updateFir = (firName, container) => {
   if (trimmedFirname && !Object.keys(container.state.firs).includes(trimmedFirname)) {
     const { BACKEND_SERVER_URL } = container.props.urls;
     axios.get(`${BACKEND_SERVER_URL}/airmets/getfir`, {
-      withCredentials: true,
+      withCredentials: false,
       params: {
         name: trimmedFirname
       }
@@ -979,7 +979,7 @@ const createFirIntersection = (featureId, geojson, container) => {
     return axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/airmets/airmetintersections`,
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json',
       data: intersectionData
     }).then((response) => {
@@ -1083,7 +1083,7 @@ const postAirmet = (container) => {
     axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/airmets`,
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json',
       data: complementedAirmet
     }).then(response => {
@@ -1155,7 +1155,7 @@ const deleteAirmet = (event, container) => {
   axios({
     method: 'delete',
     url: `${BACKEND_SERVER_URL}/airmets/${affectedAirmet.uuid}`,
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then(response => {
     showFeedback(container, 'Airmet deleted', `Airmet ${affectedAirmet.uuid} was successfully deleted`, FEEDBACK_STATUS.OK);
@@ -1334,7 +1334,7 @@ const verifyAirmet = (airmetObject, container) => {
     axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/airmets/verify`,
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json',
       data: complementedAirmet
     }).then(

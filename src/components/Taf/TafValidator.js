@@ -11,7 +11,7 @@ const TafValidator = (BACKEND_SERVER_URL, tafAsObject, inputParsingReport) => {
     axios({
       method: 'post',
       url: BACKEND_SERVER_URL + '/tafs/verify',
-      withCredentials: true,
+      withCredentials: false,
       data: JSON.stringify(tafAsObject),
       headers: { 'Content-Type': 'application/json' }
     }).then(

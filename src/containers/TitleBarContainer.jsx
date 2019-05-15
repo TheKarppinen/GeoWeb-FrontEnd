@@ -130,7 +130,7 @@ class TitleBarContainer extends PureComponent {
       axios({
         method: 'get',
         url: urls.BACKEND_SERVER_URL + '/login?username=' + this.inputfieldUserName + '&password=' + this.inputfieldPassword,
-        withCredentials: true,
+        withCredentials: false,
         responseType: 'json'
       }).then(src => {
         this.checkCredentials(() => {
@@ -153,7 +153,7 @@ class TitleBarContainer extends PureComponent {
     axios({
       method: 'get',
       url: urls.BACKEND_SERVER_URL + '/logout',
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json'
     }).then(src => {
       this.setLoggedOutCallback('Signed out');
@@ -176,7 +176,7 @@ class TitleBarContainer extends PureComponent {
     axios({
       method: 'get',
       url: urls.BACKEND_SERVER_URL + '/getuser',
-      withCredentials: true,
+      withCredentials: false,
       responseType: 'json'
     }).then(src => {
       this.checkCredentialsOKCallback(src.data);
@@ -471,7 +471,7 @@ class TitleBarContainer extends PureComponent {
     </Modal>);
   }
   fetchVersionInfo () {
-    axios.get(this.props.urls.BACKEND_SERVER_URL + '/versioninfo/version', { withCredentials: true }).then((res) => {
+    axios.get(this.props.urls.BACKEND_SERVER_URL + '/versioninfo/version', { withCredentials: false }).then((res) => {
       this.setState({ versionInfo: {
         ...this.state.versionInfo,
         messageconverter: res.data.messageconverter,
@@ -482,7 +482,7 @@ class TitleBarContainer extends PureComponent {
     });
   }
   fetchPresets () {
-    axios.get(this.props.urls.BACKEND_SERVER_URL + '/preset/getpresets', { withCredentials: true }).then((res) => {
+    axios.get(this.props.urls.BACKEND_SERVER_URL + '/preset/getpresets', { withCredentials: false }).then((res) => {
       this.setState({ presets: res.data });
     }).catch((error) => {
       console.error(error);
@@ -587,7 +587,7 @@ class TitleBarContainer extends PureComponent {
       method: 'post',
       url: url,
       params: params,
-      withCredentials: true,
+      withCredentials: false,
       data: dataToSend
     });
     // this.togglePresetModal();

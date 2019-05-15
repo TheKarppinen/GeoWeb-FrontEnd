@@ -10,7 +10,7 @@ export const ReadLocations = (url, callback, failure) => {
     method: 'get',
     url: url,
     params: { type: 'locations', name: 'locations' },
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then((src) => {
     if (src.data.message === 'ok') {
@@ -32,7 +32,7 @@ export const SaveLocations = (url, data, failure) => {
     url: url,
     params: { type: 'locations', name: 'locations' },
     data,
-    withCredentials: true,
+    withCredentials: false,
     responseType: 'json'
   }).then((src) => {
     /* istanbul ignore next */
