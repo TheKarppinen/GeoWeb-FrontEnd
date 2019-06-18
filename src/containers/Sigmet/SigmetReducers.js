@@ -101,7 +101,7 @@ const retrieveParameters = (container) => {
   axios({
     method: 'get',
     url: endpoint,
-    withCredentials: false,
+    withCredentials: true,
     responseType: 'json'
   }).then(response => {
     if (response.status === 200 && response.data) {
@@ -140,7 +140,7 @@ const retrievePhenomena = (container) => {
   axios({
     method: 'get',
     url: endpoint,
-    withCredentials: false,
+    withCredentials: true,
     responseType: 'json'
   }).then(response => {
     if (response.status === 200 && response.data) {
@@ -234,7 +234,7 @@ const retrieveSigmetTac = (container, uuid) => {
     axios({
       method: 'get',
       url: `${urls.BACKEND_SERVER_URL}/sigmets/${uuid}`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'text',
       headers: {
         'Accept': 'text/plain'
@@ -271,7 +271,7 @@ const retrieveCategorizedSigmets = (container, retrievableCategory) => {
     axios({
       method: 'get',
       url: `${endpoint}${retrievableCategory.urlSuffix}`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json'
     }).then(response => {
       if (response.status === 200 && response.data) {
@@ -509,7 +509,7 @@ const updateFir = (firName, container) => {
   if (trimmedFirname && !Object.keys(container.state.firs).includes(trimmedFirname)) {
     const { BACKEND_SERVER_URL } = container.props.urls;
     axios.get(`${BACKEND_SERVER_URL}/sigmets/getfir`, {
-      withCredentials: false,
+      withCredentials: true,
       params: {
         name: trimmedFirname
       }
@@ -1033,7 +1033,7 @@ const createFirIntersection = (featureId, geojson, container) => {
     return axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/sigmets/sigmetintersections`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json',
       data: intersectionData
     }).then((response) => {
@@ -1137,7 +1137,7 @@ const postSigmet = (container) => {
     axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/sigmets`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json',
       data: complementedSigmet
     }).then(response => {
@@ -1209,7 +1209,7 @@ const deleteSigmet = (event, container) => {
   axios({
     method: 'delete',
     url: `${BACKEND_SERVER_URL}/sigmets/${affectedSigmet.uuid}`,
-    withCredentials: false,
+    withCredentials: true,
     responseType: 'json'
   }).then(response => {
     showFeedback(container, 'Sigmet deleted', `Sigmet ${affectedSigmet.uuid} was successfully deleted`, FEEDBACK_STATUS.OK);
@@ -1385,7 +1385,7 @@ const verifySigmet = (sigmetObject, container) => {
     axios({
       method: 'post',
       url: `${urls.BACKEND_SERVER_URL}/sigmets/verify`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json',
       data: complementedSigmet
     }).then(

@@ -31,7 +31,7 @@ export const _loadPreset = (props, presetName, failure) => {
     method: 'get',
     url: `${props.urls.BACKEND_SERVER_URL}/store/read`,
     params: { type: 'urlpresets', name: presetName },
-    withCredentials: false,
+    withCredentials: true,
     responseType: 'json'
   }).then((src) => {
     const obj = JSON.parse(src.data.payload);
@@ -119,7 +119,7 @@ export function SaveURLPreset (presetName, presetObj, url, callbackfunction) {
     url: url,
     params: { type: 'urlpresets', name: presetName },
     data: presetObj,
-    withCredentials: false,
+    withCredentials: true,
     responseType: 'json'
   }).then((src) => {
     if (src.data.message === 'ok') {

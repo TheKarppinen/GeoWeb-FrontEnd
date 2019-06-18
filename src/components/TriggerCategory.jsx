@@ -40,7 +40,7 @@ class TriggerCategory extends Component {
 
   setPreset (presetName) {
     const { BACKEND_SERVER_URL } = this.props.urls;
-    axios.get(BACKEND_SERVER_URL + '/preset/getpreset?name=' + presetName, { withCredentials: false }).then((res) => {
+    axios.get(BACKEND_SERVER_URL + '/preset/getpreset?name=' + presetName, { withCredentials: true }).then((res) => {
       this.props.dispatch(this.props.actions.setPreset(res.data));
     }).catch((error) => {
       console.error(error);

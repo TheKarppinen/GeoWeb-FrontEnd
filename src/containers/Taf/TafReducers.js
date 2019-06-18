@@ -156,7 +156,7 @@ const synchronizeSelectableTafs = (container) => {
     axios({
       method: 'get',
       url: tafResource.url,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json'
     }).then(response => {
       if (response.data && Number.isInteger(response.data.ntafs)) {
@@ -607,7 +607,7 @@ const saveTafPromise = (event, container) => {
     axios({
       method: 'post',
       url: `${BACKEND_SERVER_URL}/tafs`,
-      withCredentials: false,
+      withCredentials: true,
       data: JSON.stringify(sanitizeTaf(container.state.selectedTaf[0].tafData).taf),
       headers: { 'Content-Type': 'application/json' }
     }).then(response => {
@@ -670,7 +670,7 @@ const deleteTaf = (event, container) => {
     axios({
       method: 'delete',
       url: `${BACKEND_SERVER_URL}/tafs/${uuid}`,
-      withCredentials: false,
+      withCredentials: true,
       responseType: 'json'
     }).then(response => {
       updateFeedback('TAF has been deleted', FEEDBACK_STATUSES.SUCCESS, FEEDBACK_CATEGORIES.LIFECYCLE, response.data, null, container, synchronizeSelectableTafs);
