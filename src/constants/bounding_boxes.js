@@ -1,7 +1,7 @@
 // These work for EPSG:3857 projection (mercator)
 //          bottom left/upper right (y/x)
 // Using Finland instead of orig NL values
-const NL = { projection: { code: 'EPSG:3857', name: 'Mercator' }, title: 'Finland', bbox: [1751325.1921, 8076642.1567, 3742356.9048, 9969834.4732] };
+const NL = { projection: { code: 'EPSG:3857', name: 'Mercator' }, title: 'Finland', bbox: [1751325.1921, 8076642.1567, 3896182.1800, 11068715.6600] };
 //const NL = { projection: { code: 'EPSG:3857', name: 'Mercator' }, title: 'Netherlands', bbox: [314909.3659069278, 6470493.345653814, 859527.2396033217, 7176664.533565958] };
 const NL_NORTHSEA = { projection: { code: 'EPSG:3857', name: 'Mercator' }, title: 'NL + North Sea', bbox: [1960.19, 6551456.69, 846923.65, 7550440] };
 const WESTERN_EUROPE = { projection: { code: 'EPSG:3857', name: 'Mercator' }, title: 'Western Europe', bbox: [-1180632.97, 4310394.19, 2049131.83, 9243688.99] };
