@@ -330,5 +330,14 @@
             "tileServerType": "wmst",
             "copyRight": "NPS - Natural Earth II"
         }
+    },
+    "FmiBasicMap": {
+        "EPSG:3857": {
+            "home": "https://wms.fmi.fi/fmi-apikey/2298ea44-5ad4-4f07-838f-7dbc75af8379/geoserver/wms",
+            "service": "https://wms.fmi.fi/fmi-apikey/2298ea44-5ad4-4f07-838f-7dbc75af8379/geoserver/wms?",
+            "layer": "BasicMap",
+            "tileServerType": "wms",
+            "copyRight": "FMI"
+        }
     }
 }
