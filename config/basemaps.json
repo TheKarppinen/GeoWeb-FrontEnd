@@ -333,10 +333,9 @@
     },
     "FmiBasicMap": {
         "EPSG:3857": {
-            "home": "http://wms.fmi.fi/fmi-apikey/2298ea44-5ad4-4f07-838f-7dbc75af8379/geoserver/wms?SERVICE=WMS",
+            "title": "FMI Basic Map",
             "service": "http://wms.fmi.fi/fmi-apikey/2298ea44-5ad4-4f07-838f-7dbc75af8379/geoserver/wms?SERVICE=WMS",
             "layer": "BasicMap",
-            "tileServerType": "wms",
             "copyRight": "FMI"
         }
     }
