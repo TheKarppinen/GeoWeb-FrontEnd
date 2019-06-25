@@ -141,7 +141,7 @@ const ESRI_ARCGIS_OCEAN = {
 const FMI_BASIC_MAP = {
   name: 'FmiBasicMap',
   title: 'FMI Basic Map',
-  type: 'wms',
+  type: 'twms',
   enabled: true,
   dimensions: []
 };
