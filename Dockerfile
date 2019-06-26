@@ -10,3 +10,9 @@ CMD echo "{ \
   \"BACKEND_SERVER_XML2JSON\": \"${GEOWEBBACKENDURL}/XML2JSON?\" \
 }" > usr/share/nginx/html/urls.json \
   && nginx -g 'daemon off;'
+
+# Curl needed for healthcheck
+RUN yum update -y && \
+    yum install -y curl \
+    yum clean all && \
+    rm -rf /var/cache/yum
