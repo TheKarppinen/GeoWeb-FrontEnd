@@ -12,7 +12,4 @@ CMD echo "{ \
   && nginx -g 'daemon off;'
 
 # Curl needed for healthcheck
-RUN yum update -y && \
-    yum install -y curl \
-    yum clean all && \
-    rm -rf /var/cache/yum
+RUN apt-get update && apt-get install -y curl && apt-get clean
